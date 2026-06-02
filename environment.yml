@@ -1,0 +1,19 @@
+channels: 
+  - conda-forge
+  - bioconda
+  - defaults
+
+dependencies:
+  - python=3.11
+  - nextflow
+  - fastqc
+  - fastp
+  - bwa
+  - samtools
+  - gatk4
+  - snpeff
+  - plink
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
