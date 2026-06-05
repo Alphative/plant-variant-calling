@@ -6,7 +6,7 @@ process SAMTOOLS_SORT {
     tuple val(id), path(bam)
 
     output:
-    tuple val(id), path("${id}.st_sorted.bam*") 
+    tuple val(id), path("${id}.st_sorted.bam"), path("${id}.st_sorted.bam.bai")
 
     script:
     """

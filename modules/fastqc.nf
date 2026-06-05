@@ -1,15 +1,15 @@
 process FASTQC {
     tag "$id"
-    publishDir "${params.output}/qc/fastqc", mode: 'copy'
+    publishDir "${params.output}/fastqc", mode: 'copy'
 
     input:
     tuple val(id), path(reads)
 
     output:
-    path "*{html,zip}"
+    tuple val(id), path("*.html"), path("*.zip")
 
     script:
     """
-    fastqc $reads
+    fastqc -o . -t ${task.cpus} ${reads[0]} ${reads[1]}
     """
 }

@@ -1,16 +1,17 @@
-process BWA {
+process BWA_MEM {
     tag "$id"
+    // publishDir убран намеренно, файл промежуточный
 
     input:
     tuple val(id), path(reads)
-    path fasta
-    path indices
+    path ref_fasta
+    path ref_indices
 
     output:
     tuple val(id), path("${id}.aligned.bam")
 
     script:
     """
-    bwa mem $fasta ${reads[0]} ${reads[1]} | samtools view -bS - > ${id}.aligned.bam
+    bwa mem -t ${task.cpus} $ref_fasta ${reads[0]} ${reads[1]} | samtools view -Sb - > ${id}.aligned.bam
     """
 }
