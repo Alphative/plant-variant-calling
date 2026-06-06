@@ -9,13 +9,14 @@ process HTC {
     tuple val(id), path(bam), path(bai)
 
     output:
-    tuple val(id), path("${id}.htc.vcf"), path("${id}.htc.vcf.idx")
+    tuple val(id), path("${id}.g.vcf"), path("${id}.g.vcf.idx")
 
     script:
     """
     gatk HaplotypeCaller \
         -R genome.fasta \
         -I $bam \
-        -O ${id}.htc.vcf
+        -O ${id}.g.vcf \
+        -ERC GVCF
     """
 }
