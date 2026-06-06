@@ -1,6 +1,5 @@
 process BWA_MEM {
     tag "$id"
-    // publishDir убран намеренно, файл промежуточный
 
     input:
     tuple val(id), path(reads)
