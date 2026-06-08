@@ -10,10 +10,10 @@ process MD {
     
     script:
     """
-    gatk MarkDuplicates \
-        -I $bam \
-        -O ${id}.md.bam \
-        -M ${id}.metrics.txt \
+    gatk MarkDuplicates \\
+        -I $bam \\
+        -O ${id}.md.bam \\
+        -M ${id}.metrics.txt \\
         --CREATE_INDEX true
     """
 }

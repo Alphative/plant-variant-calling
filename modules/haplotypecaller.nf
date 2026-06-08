@@ -13,10 +13,10 @@ process HTC {
 
     script:
     """
-    gatk HaplotypeCaller \
-        -R genome.fasta \
-        -I $bam \
-        -O ${id}.g.vcf \
+    gatk HaplotypeCaller \\
+        -R genome.fasta \\
+        -I $bam \\
+        -O ${id}.g.vcf \\
         -ERC GVCF
     """
 }

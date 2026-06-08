@@ -12,15 +12,15 @@ process FILTER_VARIANTS {
 
     script:
     """
-    gatk VariantFiltration \
-        -R genome.fasta \
-        -V $vcf \
-        -O ${id}.filtered.vcf \
-        --filter-expression "QD < 2.0" \
-        --filter-name "LowQD" \
-        --filter-expression "FS > 60.0" \
-        --filter-name "StrandBias" \
-        --filter-expression "MQ < 40.0" \
+    gatk VariantFiltration \\
+        -R genome.fasta \\
+        -V $vcf \\
+        -O ${id}.filtered.vcf \\
+        --filter-expression "QD < 2.0" \\
+        --filter-name "LowQD" \\
+        --filter-expression "FS > 60.0" \\
+        --filter-name "StrandBias" \\
+        --filter-expression "MQ < 40.0" \\
         --filter-name "LowMappingQual"
     """
 }

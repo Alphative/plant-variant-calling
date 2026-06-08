@@ -9,13 +9,13 @@ process ADD_RG {
 
     script:
     """
-    gatk AddOrReplaceReadGroups \
-        -I $bam \
-        -O ${id}.rg.bam \
-        -RGID $id \
-        -RGLB lib1 \
-        -RGPL illumina \
-        -RGPU unit1 \
+    gatk AddOrReplaceReadGroups \\
+        -I $bam \\
+        -O ${id}.rg.bam \\
+        -RGID $id \\
+        -RGLB lib1 \\
+        -RGPL illumina \\
+        -RGPU unit1 \\
         -RGSM $id
     """
 }

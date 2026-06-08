@@ -10,10 +10,10 @@ process FASTP {
 
     script:
     """
-    fastp \
-        -i ${reads[0]} -I ${reads[1]} \
-        -o ${id}_trimmed_R1.fastq.gz -O ${id}_trimmed_R2.fastq.gz \
-        --html ${id}.fastp.html --json ${id}.fastp.json \
+    fastp \\
+        -i ${reads[0]} -I ${reads[1]} \\
+        -o ${id}_trimmed_R1.fastq.gz -O ${id}_trimmed_R2.fastq.gz \\
+        --html ${id}.fastp.html --json ${id}.fastp.json \\
         --thread ${task.cpus}
     """
 }
