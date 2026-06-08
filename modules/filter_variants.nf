@@ -1,21 +1,20 @@
 process FILTER_VARIANTS {
-    tag "$id"
     publishDir "${params.output}/filter_variants", mode: 'copy'
 
     input: 
     path "genome.fasta"
     path "genome.fasta.fai"
-    tuple val(id), path(vcf), path(idx)
+    tuple path(vcf), path(idx)
 
     output:
-    tuple val(id), path("${id}.filtered.vcf"), path("${id}.filtered.vcf.idx")
+    tuple path("cohort.filtered.vcf"), path("cohort.filtered.vcf.idx")
 
     script:
     """
     gatk VariantFiltration \\
         -R genome.fasta \\
         -V $vcf \\
-        -O ${id}.filtered.vcf \\
+        -O cohort.filtered.vcf \\
         --filter-expression "QD < 2.0" \\
         --filter-name "LowQD" \\
         --filter-expression "FS > 60.0" \\
