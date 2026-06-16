@@ -1,6 +1,6 @@
 process MD {
     tag "$id"
-    publishDir "${params.outdir}/qc/mark_duplicates", mode: 'copy', pattern: "*.txt"
+    publishDir "${params.output}/qc/mark_duplicates", mode: 'copy', pattern: "*.txt"
 
     input:
     tuple val(id), path(bam)
