@@ -17,3 +17,7 @@ dependencies:
   - numpy
   - scipy
   - matplotlib
+  - seaborn
+  - pip
+  - tabix
+  - wget
