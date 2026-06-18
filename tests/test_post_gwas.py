@@ -4,7 +4,7 @@ import pandas as pd
 import pytest
 
 sys.path.append("../source")
-from post_gwas import load_gwas, load_annotations, downsample_gwas, merge_data
+from post_gwas import load_gwas, downsample_gwas, merge_data
 
 
 @pytest.fixture
