@@ -17,7 +17,7 @@ process POSTGWAS {
     --output postgwas.tsv \\
     --plot barplot.png \\
     --manhattan manhattan.png \\
-    --qq qq.png
+    --qq qq.png \\
     --p-thresh ${params.p_thresh}
     """
 }

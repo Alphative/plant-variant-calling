@@ -16,6 +16,7 @@ process GDBIMPORT {
     gatk GenomicsDBImport \\
     -V ${gvcfs.join(' -V ')} \\
     --genomicsdb-workspace-path ${params.athaliana_db} \\
-    -L ${beds}
+    -L ${beds} \\
+    --batch_size 50 
     """
 }
