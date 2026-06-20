@@ -21,3 +21,6 @@ aws_credentials
 *.log
 .DS_Store
 .vscode/
+pipeline_report.html
+pipeline_timeline.html
+pipeline_trace.txt

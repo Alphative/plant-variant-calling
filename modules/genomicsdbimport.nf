@@ -1,22 +1,19 @@
 process GDBIMPORT {
     input:
     path gvcfs
-
     path tbis
-
-    path beds
-
+    path bed
 
     output:
     path "${params.athaliana_db}"
 
-
     script:
+    def vcf_args = gvcfs.collect { vcf -> "-V ${vcf}" }.join(' ')
     """
-    gatk GenomicsDBImport \\
-    -V ${gvcfs.join(' -V ')} \\
-    --genomicsdb-workspace-path ${params.athaliana_db} \\
-    -L ${beds} \\
-    --batch_size 50 
+    gatk GenomicsDBImport \
+        ${vcf_args} \
+        --genomicsdb-workspace-path ${params.athaliana_db} \
+        -L ${bed} \
+        --batch-size 50
     """
 }

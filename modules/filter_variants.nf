@@ -1,25 +1,26 @@
 process FILTER_VARIANTS {
-    publishDir "${params.output}/filter_variants", mode: 'copy'
+    container 'plant-variant-calling'
 
-    input: 
-    path "genome.fasta"
-    path "genome.fasta.fai"
+    input:
+    path genome
+    path fai
+    path dict
     tuple path(vcf), path(idx)
 
     output:
-    tuple path("cohort.filtered.vcf"), path("cohort.filtered.vcf.idx")
+    path "cohort.filtered.vcf"
 
     script:
     """
-    gatk VariantFiltration \\
-        -R genome.fasta \\
-        -V $vcf \\
-        -O cohort.filtered.vcf \\
-        --filter-expression "QD < 2.0" \\
-        --filter-name "LowQD" \\
-        --filter-expression "FS > 60.0" \\
-        --filter-name "StrandBias" \\
-        --filter-expression "MQ < 40.0" \\
+    gatk VariantFiltration \
+        -R ${genome} \
+        -V ${vcf} \
+        -O cohort.filtered.vcf \
+        --filter-expression "QD < 2.0" \
+        --filter-name "LowQD" \
+        --filter-expression "FS > 60.0" \
+        --filter-name "StrandBias" \
+        --filter-expression "MQ < 40.0" \
         --filter-name "LowMappingQual"
     """
 }

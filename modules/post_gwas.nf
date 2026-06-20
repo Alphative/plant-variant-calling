@@ -11,7 +11,7 @@ process POSTGWAS {
 
     script:
     """
-    python /app/post_gwas.py \\
+    python /app/source/post_gwas.py \\
     --gwas $gwas_results \\
     --annot $gff_annot \\
     --output postgwas.tsv \\

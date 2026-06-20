@@ -4,8 +4,8 @@ process DOWNLOADREF {
     val gff_url
 
     output:
-    path "reference.fasta"
-    path "reference.gff"
+    path "reference.fasta", emit: fasta
+    path "reference.gff", emit: gff
 
     script:
     """

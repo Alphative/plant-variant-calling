@@ -11,6 +11,7 @@ process SNPEFF {
 
     script:
     """
+    snpEff download -v ${db_name}
     snpEff -v ${db_name} \\
     -s snpEff_summary.html \\
     ${filtredvcf} > cohort.ann.vcf
