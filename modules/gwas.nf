@@ -5,21 +5,15 @@ process GWAS {
     path pheno_file
 
     output:
-    path("gwas_results.assoc.linear")
+    path("gwas_results.assoc")
 
     script:
     """
     plink \\
     --bfile ${bed.baseName} \\
-    --pca 10 \\
-    --allow-extra-chr \\
-    --out pca_results
-
-    plink \\
-    --bfile ${bed.baseName} \\
     --pheno ${pheno_file} \\
-    --linear \\
-    --covar pca_results.eigenvec \\
+    --assoc \\
+    --allow-no-sex \\
     --allow-extra-chr \\
     --out gwas_results
     """

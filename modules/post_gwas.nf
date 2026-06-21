@@ -1,4 +1,5 @@
 process POSTGWAS {
+    publishDir "${params.output}/postgwas", mode: 'copy'
     input:
     path gwas_results
     path gff_annot

@@ -26,13 +26,17 @@ logger = logging.getLogger(__name__)
 def load_gwas(file_path):
     logger.info(f"Loading GWAS results from {file_path}...")
     df = pd.read_csv(file_path, sep=r'\s+')
-    df = df[df['TEST'] == 'ADD']
+    if 'TEST' in df.columns:
+        df = df[df['TEST'] == 'ADD']
     logger.info(f"Successfully loaded {len(df)} SNPs after filtering")
     return df
 
 def load_annotations(file_path):
     logger.info(f"Loading annotations from {file_path} started...")
-    df = pd.read_csv(file_path, sep=r'\t', comment='#')
+    columns = ['CHR', 'source', 'type', 'START', 'END', 'score', 'strand', 'phase', 'attributes']
+    df = pd.read_csv(file_path, sep='\t', comment='#', names=columns, low_memory=False)
+    df = df[df['type'] == 'gene']
+    df['GENE_ID'] = df['attributes'].str.extract(r'ID=gene:([^;]+)')
     logger.info(f"Successfully loaded {len(df)} annotation records.")
     return df
 
@@ -153,7 +157,12 @@ def main():
     merged_df = merge_data(gwas_df, annot_df, args.p_thresh)
     
     if merged_df.empty:
-        logger.warning("No SNPs passed the threshold. Pipeline stopped.")
+        logger.warning("No SNPs passed the threshold. Creating empty files to satisfy Nextflow.")
+        pd.DataFrame(columns=gwas_df.columns.tolist() + ['GENE_ID']).to_csv(args.output, sep='\t', index=False)
+        fig, ax = plt.subplots()
+        ax.text(0.5, 0.5, 'No significant SNPs aligned to genes', ha='center', va='center')
+        plt.savefig(args.plot)
+        plt.close()
         return
         
     save_results(merged_df, args.output)

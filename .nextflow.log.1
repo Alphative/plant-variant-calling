@@ -1,0 +1,429 @@
+Jun-21 17:50:00.575 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -profile local -resume
+Jun-21 17:50:00.745 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.3
+Jun-21 17:50:00.776 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/home/q11/.nextflow/plugins; core-plugins: nf-amazon@3.9.1,nf-azure@1.22.5,nf-cloudcache@0.6.0,nf-codecommit@0.5.2,nf-console@1.3.0,nf-google@1.27.3,nf-k8s@1.5.4,nf-seqera@0.20.1,nf-tower@1.28.0,nf-wave@1.21.0
+Jun-21 17:50:00.815 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jun-21 17:50:00.816 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jun-21 17:50:00.819 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+Jun-21 17:50:00.843 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+Jun-21 17:50:01.057 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+Jun-21 17:50:01.063 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jun-21 17:50:01.090 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /home/q11/plant_variant_calling/nextflow.config
+Jun-21 17:50:01.093 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /home/q11/plant_variant_calling/nextflow.config
+Jun-21 17:50:01.098 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+Jun-21 17:50:01.117 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `local`
+Jun-21 17:50:01.583 [main] DEBUG nextflow.config.ConfigBuilder - Available config profiles: [local, awsbatch]
+Jun-21 17:50:01.622 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jun-21 17:50:01.622 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jun-21 17:50:01.638 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /home/q11/.nextflow/secrets/store.json
+Jun-21 17:50:01.641 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@7fb48179] - activable => nextflow.secret.LocalSecretsProvider@7fb48179
+Jun-21 17:50:01.662 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [scruffy_franklin] - revision: 12e3f20643
+Jun-21 17:50:01.756 [main] DEBUG nextflow.Session - Session UUID: f29b5ea5-9739-4adb-85ec-00702bea0907
+Jun-21 17:50:01.757 [main] DEBUG nextflow.Session - Run name: scruffy_franklin
+Jun-21 17:50:01.757 [main] DEBUG nextflow.Session - Executor pool size: 16
+Jun-21 17:50:01.767 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+Jun-21 17:50:01.774 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jun-21 17:50:01.809 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.3 build 12259
+  Created: 28-05-2026 08:48 UTC (10:48 CEST)
+  System: Linux 6.18.33.1-microsoft-standard-WSL2
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 23.0.2-internal-adhoc.conda.src
+  Encoding: UTF-8 (UTF-8)
+  Process: 554768@WIN-BT52OI4EG5R [127.0.1.1]
+  CPUs: 16 - Mem: 15.6 GB (11.6 GB) - Swap: 4 GB (4 GB)
+Jun-21 17:50:01.850 [main] DEBUG nextflow.Session - Work-dir: /home/q11/plant_variant_calling/work [ext2/ext3]
+Jun-21 17:50:01.850 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/q11/plant_variant_calling/bin
+Jun-21 17:50:01.860 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jun-21 17:50:01.871 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+Jun-21 17:50:01.873 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+Jun-21 17:50:01.923 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jun-21 17:50:01.933 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 17; maxThreads: 1000
+Jun-21 17:50:02.013 [main] DEBUG nextflow.Session - Session start
+Jun-21 17:50:02.022 [main] DEBUG nextflow.Session - Report file already exists: pipeline_report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Report file already exists: pipeline_report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.ReportObserver.onFlowCreate(ReportObserver.groovy:119)
+	at nextflow.Session$_notifyFlowCreate_lambda33.doCall(Session.groovy:1079)
+	at nextflow.Session.notifyEvent(Session.groovy:1123)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1079)
+	at nextflow.Session.start(Session.groovy:606)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:122)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+	at nextflow.cli.Launcher.run(Launcher.groovy:526)
+	at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Jun-21 17:50:02.023 [main] DEBUG nextflow.Session - Timeline file already exists: pipeline_timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+nextflow.exception.AbortOperationException: Timeline file already exists: pipeline_timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TimelineObserver.onFlowCreate(TimelineObserver.groovy:80)
+	at nextflow.Session$_notifyFlowCreate_lambda33.doCall(Session.groovy:1079)
+	at nextflow.Session.notifyEvent(Session.groovy:1123)
+	at nextflow.Session.notifyFlowCreate(Session.groovy:1079)
+	at nextflow.Session.start(Session.groovy:606)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:122)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+	at nextflow.cli.Launcher.run(Launcher.groovy:526)
+	at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Jun-21 17:50:02.023 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: pipeline_trace.txt
+Jun-21 17:50:02.024 [main] WARN  nextflow.trace.TraceFileObserver - Failed to create trace file: pipeline_trace.txt -- Trace file already exists: pipeline_trace.txt -- enable the 'trace.overwrite' option in your config file to overwrite existing files
+Jun-21 17:50:02.025 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+Jun-21 17:50:02.786 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jun-21 17:50:03.094 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.094 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.102 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jun-21 17:50:03.109 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=16; memory=15.6 GB; capacity=16; pollInterval=100ms; dumpInterval=5m
+Jun-21 17:50:03.111 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+Jun-21 17:50:03.156 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'DOWNLOADREF': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.204 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.204 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.205 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PREPARE_GENOME': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.209 [main] WARN  nextflow.extension.OperatorImpl - The operator `first` is useless when applied to a value channel which returns a single value by definition
+Jun-21 17:50:03.232 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.232 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.233 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTQC': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.239 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.240 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.241 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FASTP': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.250 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.250 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.251 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'BWA_MEM': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.259 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.260 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.262 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SAMTOOLS_SORT': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.268 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.268 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.269 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'ADD_RG': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.275 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.275 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.276 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MD': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.285 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.285 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.286 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'HTC': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.304 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.304 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.305 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GENERATE_INTERVALS': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.308 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.308 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.309 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GDBIMPORT': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.316 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.316 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.318 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GGVCFS': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.325 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.325 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.326 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'FILTER_VARIANTS': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.334 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.334 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.335 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'SNPEFF': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.341 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.342 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.343 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'PLINK': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.353 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.354 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.355 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'GWAS': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.360 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+Jun-21 17:50:03.360 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jun-21 17:50:03.361 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'POSTGWAS': maxForks=0; fair=false; array=0
+Jun-21 17:50:03.365 [main] DEBUG nextflow.Session - Process names: FASTQC, PLINK, GGVCFS, SNPEFF, GENERATE_INTERVALS, GWAS, PREPARE_GENOME, DOWNLOADREF, FASTP, POSTGWAS, GDBIMPORT, SAMTOOLS_SORT, BWA_MEM, HTC, MD, ADD_RG, FILTER_VARIANTS
+Jun-21 17:50:03.367 [main] DEBUG nextflow.Session - Igniting dataflow network (19)
+Jun-21 17:50:03.376 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > DOWNLOADREF
+Jun-21 17:50:03.377 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PREPARE_GENOME
+Jun-21 17:50:03.378 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTQC
+Jun-21 17:50:03.379 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FASTP
+Jun-21 17:50:03.379 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > BWA_MEM
+Jun-21 17:50:03.379 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SAMTOOLS_SORT
+Jun-21 17:50:03.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > ADD_RG
+Jun-21 17:50:03.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MD
+Jun-21 17:50:03.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > HTC
+Jun-21 17:50:03.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GENERATE_INTERVALS
+Jun-21 17:50:03.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GDBIMPORT
+Jun-21 17:50:03.380 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GGVCFS
+Jun-21 17:50:03.381 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > FILTER_VARIANTS
+Jun-21 17:50:03.381 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > SNPEFF
+Jun-21 17:50:03.381 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > PLINK
+Jun-21 17:50:03.382 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > GWAS
+Jun-21 17:50:03.382 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > POSTGWAS
+Jun-21 17:50:03.382 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_04c9ece28f4307f0: /home/q11/plant_variant_calling/modules/download_ref.nf
+  _nf_script_065b794bda23a674: /home/q11/plant_variant_calling/modules/gwas.nf
+  _nf_script_a5cc02868861836e: /home/q11/plant_variant_calling/modules/post_gwas.nf
+  _nf_script_bd79cf05839840aa: /home/q11/plant_variant_calling/modules/haplotypecaller.nf
+  _nf_script_9daea54b1ff76731: /home/q11/plant_variant_calling/modules/make_intervals.nf
+  _nf_script_a0c1842800fffe6e: /home/q11/plant_variant_calling/modules/snpeff.nf
+  _nf_script_453fce8bd4b5df47: /home/q11/plant_variant_calling/modules/fastqc.nf
+  _nf_script_98cc919c8eee88b4: /home/q11/plant_variant_calling/modules/fastp.nf
+  _nf_script_8f78645080f78dc3: /home/q11/plant_variant_calling/modules/genomicsdbimport.nf
+  _nf_script_0c895233ec1b450a: /home/q11/plant_variant_calling/modules/bwa.nf
+  _nf_script_b04aeb8466e09beb: /home/q11/plant_variant_calling/modules/plink.nf
+  _nf_script_4dff3546168cadd6: /home/q11/plant_variant_calling/modules/genotypegvcfs.nf
+  _nf_script_2f59e5002b87bbe9: /home/q11/plant_variant_calling/modules/samtools.nf
+  _nf_script_8c92f1783a0f4ce7: /home/q11/plant_variant_calling/modules/mark_duplicates.nf
+  _nf_script_16f433f0b60d18b3: /home/q11/plant_variant_calling/modules/add_read_groups.nf
+  _nf_script_0fe304266dfa098d: /home/q11/plant_variant_calling/modules/filter_variants.nf
+  Main: /home/q11/plant_variant_calling/main.nf
+  _nf_script_4e6ee55fd8fe95d3: /home/q11/plant_variant_calling/modules/index_ref.nf
+Jun-21 17:50:03.383 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jun-21 17:50:03.383 [main] DEBUG nextflow.Session - Session await
+Jun-21 17:50:03.489 [FileTransfer-1] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/005/SRR1945465/SRR1945465_1.fastq.gz to work dir: /home/q11/plant_variant_calling/work/stage-f29b5ea5-9739-4adb-85ec-00702bea0907/b6/0d604460fa9a9f84e22dc2fde9c44c/SRR1945465_1.fastq.gz
+Jun-21 17:50:03.489 [FileTransfer-2] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/005/SRR1945465/SRR1945465_2.fastq.gz to work dir: /home/q11/plant_variant_calling/work/stage-f29b5ea5-9739-4adb-85ec-00702bea0907/88/25719c91fa3009b818a80841f8cbc4/SRR1945465_2.fastq.gz
+Jun-21 17:50:03.490 [FileTransfer-3] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/003/SRR1945483/SRR1945483_1.fastq.gz to work dir: /home/q11/plant_variant_calling/work/stage-f29b5ea5-9739-4adb-85ec-00702bea0907/1f/6370641ea0908449d15898fb262287/SRR1945483_1.fastq.gz
+Jun-21 17:50:03.491 [FileTransfer-4] DEBUG nextflow.file.FilePorter - Copying foreign file ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/003/SRR1945483/SRR1945483_2.fastq.gz to work dir: /home/q11/plant_variant_calling/work/stage-f29b5ea5-9739-4adb-85ec-00702bea0907/7e/e9243eff5c6bddd03788874eb5772f/SRR1945483_2.fastq.gz
+Jun-21 17:50:03.555 [Actor Thread 13] INFO  nextflow.processor.TaskProcessor - [bc/768f7d] Cached process > DOWNLOADREF
+Jun-21 17:50:03.593 [Actor Thread 7] INFO  nextflow.processor.TaskProcessor - [27/9bba55] Cached process > PREPARE_GENOME
+Jun-21 17:50:03.605 [Actor Thread 3] INFO  nextflow.processor.TaskProcessor - [23/f28abe] Cached process > GENERATE_INTERVALS
+Jun-21 17:50:05.490 [Actor Thread 16] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/005/SRR1945465/SRR1945465_1.fastq.gz
+Jun-21 17:50:05.490 [Actor Thread 10] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/003/SRR1945483/SRR1945483_1.fastq.gz
+Jun-21 17:50:07.490 [Actor Thread 16] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/005/SRR1945465/SRR1945465_2.fastq.gz
+Jun-21 17:50:07.490 [Actor Thread 10] INFO  nextflow.file.FilePorter - Staging foreign file: ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR194/003/SRR1945483/SRR1945483_2.fastq.gz
+Jun-21 17:55:03.249 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > No more task to compute -- The following nodes are still active:
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref_fasta
+  port 2: (value) bound ; channel: ref_indices
+  port 3: (cntrl) -     ; channel: $
+
+[process] SAMTOOLS_SORT
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] ADD_RG
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] MD
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HTC
+  status=ACTIVE
+  port 0: (value) bound ; channel: genome.fasta
+  port 1: (value) bound ; channel: genome.fasta.fai
+  port 2: (value) bound ; channel: genome.dict
+  port 3: (queue) OPEN  ; channel: -
+  port 4: (cntrl) -     ; channel: $
+
+[process] GDBIMPORT
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: bed
+  port 3: (cntrl) -     ; channel: $
+
+[process] GGVCFS
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: db
+  port 1: (value) bound ; channel: refgenome
+  port 2: (value) bound ; channel: refgenomefai
+  port 3: (value) bound ; channel: refgenomedict
+  port 4: (cntrl) -     ; channel: $
+
+[process] FILTER_VARIANTS
+  status=ACTIVE
+  port 0: (value) bound ; channel: genome
+  port 1: (value) bound ; channel: fai
+  port 2: (value) bound ; channel: dict
+  port 3: (value) OPEN  ; channel: -
+  port 4: (cntrl) -     ; channel: $
+
+[process] SNPEFF
+  status=ACTIVE
+  port 0: (value) bound ; channel: db_name
+  port 1: (value) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] PLINK
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: cohort_vcf
+  port 1: (cntrl) -     ; channel: $
+
+[process] GWAS
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: -
+  port 1: (value) bound ; channel: pheno_file
+  port 2: (cntrl) -     ; channel: $
+
+[process] POSTGWAS
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gwas_results
+  port 1: (value) bound ; channel: gff_annot
+  port 2: (cntrl) -     ; channel: $
+
+Jun-21 17:58:51.955 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [1c/bd726a] Cached process > FASTP (SRR1945465)
+Jun-21 17:58:51.959 [Actor Thread 16] INFO  nextflow.processor.TaskProcessor - [bb/571df2] Cached process > FASTQC (SRR1945465)
+Jun-21 17:58:51.968 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [6c/e2567f] Cached process > BWA_MEM (SRR1945465)
+Jun-21 17:58:51.973 [Actor Thread 16] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=48; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+Jun-21 17:58:51.976 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [2d/b45032] Cached process > SAMTOOLS_SORT (SRR1945465)
+Jun-21 17:58:51.986 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [51/98b460] Cached process > ADD_RG (SRR1945465)
+Jun-21 17:58:51.996 [Actor Thread 8] INFO  nextflow.processor.TaskProcessor - [9b/55a721] Cached process > MD (SRR1945465)
+Jun-21 17:58:52.005 [Actor Thread 2] INFO  nextflow.processor.TaskProcessor - [0f/b5124c] Cached process > HTC (SRR1945465)
+Jun-21 18:00:03.322 [Task monitor] DEBUG n.processor.TaskPollingMonitor - !! executor local > No more task to compute -- The following nodes are still active:
+[process] FASTQC
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] FASTP
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] BWA_MEM
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (value) bound ; channel: ref_fasta
+  port 2: (value) bound ; channel: ref_indices
+  port 3: (cntrl) -     ; channel: $
+
+[process] SAMTOOLS_SORT
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] ADD_RG
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] MD
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+[process] HTC
+  status=ACTIVE
+  port 0: (value) bound ; channel: genome.fasta
+  port 1: (value) bound ; channel: genome.fasta.fai
+  port 2: (value) bound ; channel: genome.dict
+  port 3: (queue) OPEN  ; channel: -
+  port 4: (cntrl) -     ; channel: $
+
+[process] GDBIMPORT
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gvcfs
+  port 1: (value) OPEN  ; channel: tbis
+  port 2: (value) bound ; channel: bed
+  port 3: (cntrl) -     ; channel: $
+
+[process] GGVCFS
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: db
+  port 1: (value) bound ; channel: refgenome
+  port 2: (value) bound ; channel: refgenomefai
+  port 3: (value) bound ; channel: refgenomedict
+  port 4: (cntrl) -     ; channel: $
+
+[process] FILTER_VARIANTS
+  status=ACTIVE
+  port 0: (value) bound ; channel: genome
+  port 1: (value) bound ; channel: fai
+  port 2: (value) bound ; channel: dict
+  port 3: (value) OPEN  ; channel: -
+  port 4: (cntrl) -     ; channel: $
+
+[process] SNPEFF
+  status=ACTIVE
+  port 0: (value) bound ; channel: db_name
+  port 1: (value) OPEN  ; channel: -
+  port 2: (cntrl) -     ; channel: $
+
+[process] PLINK
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: cohort_vcf
+  port 1: (cntrl) -     ; channel: $
+
+[process] GWAS
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: -
+  port 1: (value) bound ; channel: pheno_file
+  port 2: (cntrl) -     ; channel: $
+
+[process] POSTGWAS
+  status=ACTIVE
+  port 0: (value) OPEN  ; channel: gwas_results
+  port 1: (value) bound ; channel: gff_annot
+  port 2: (cntrl) -     ; channel: $
+
+Jun-21 18:00:36.704 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [c3/f75477] Cached process > FASTP (SRR1945483)
+Jun-21 18:00:36.705 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [c6/4b7b55] Cached process > FASTQC (SRR1945483)
+Jun-21 18:00:36.714 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [ad/68a829] Cached process > BWA_MEM (SRR1945483)
+Jun-21 18:00:36.720 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [b5/54ad23] Cached process > SAMTOOLS_SORT (SRR1945483)
+Jun-21 18:00:36.727 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [9f/fc68cb] Cached process > ADD_RG (SRR1945483)
+Jun-21 18:00:36.734 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [a5/4c9f18] Cached process > MD (SRR1945483)
+Jun-21 18:00:36.742 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [42/1305ce] Cached process > HTC (SRR1945483)
+Jun-21 18:00:36.925 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [94/92e4d4] Cached process > GDBIMPORT
+Jun-21 18:00:36.932 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [4f/4c39da] Cached process > GGVCFS
+Jun-21 18:00:36.939 [Actor Thread 10] INFO  nextflow.processor.TaskProcessor - [1d/8c483a] Cached process > FILTER_VARIANTS
+Jun-21 18:00:36.946 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [0d/346841] Cached process > SNPEFF
+Jun-21 18:00:36.970 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [b5/eed46f] Cached process > PLINK
+Jun-21 18:00:36.979 [Actor Thread 9] INFO  nextflow.processor.TaskProcessor - [8c/504943] Cached process > GWAS
+Jun-21 18:00:36.998 [Actor Thread 12] INFO  nextflow.processor.TaskProcessor - [d1/cd0b6d] Cached process > POSTGWAS
+Jun-21 18:00:37.001 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jun-21 18:00:37.070 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+Jun-21 18:00:37.070 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jun-21 18:00:37.074 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'PublishDir' shutdown completed (hard=false)
+Jun-21 18:00:37.081 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=0; failedCount=0; ignoredCount=0; cachedCount=24; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=0ms; failedDuration=0ms; cachedDuration=15h 35m 28s;loadCpus=0; loadMemory=0; peakRunning=0; peakCpus=0; peakMemory=0; ]
+Jun-21 18:00:37.221 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+Jun-21 18:00:37.675 [main] WARN  nextflow.trace.ReportObserver - Failed to render execution report -- see the log file for details
+nextflow.exception.AbortOperationException: Report file already exists: pipeline_report.html -- enable the 'report.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:66)
+	at nextflow.trace.ReportObserver.renderHtml(ReportObserver.groovy:243)
+	at nextflow.trace.ReportObserver.onFlowComplete(ReportObserver.groovy:129)
+	at nextflow.Session$_notifyFlowComplete_lambda38.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1123)
+	at nextflow.Session.notifyFlowComplete(Session.groovy:1093)
+	at nextflow.Session.shutdown0(Session.groovy:775)
+	at nextflow.Session.destroy(Session.groovy:720)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:244)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:136)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+	at nextflow.cli.Launcher.run(Launcher.groovy:526)
+	at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Caused by: java.nio.file.FileAlreadyExistsException: pipeline_report.html
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:262)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3012)
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:63)
+	... 12 common frames omitted
+Jun-21 18:00:37.676 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+Jun-21 18:00:37.758 [main] WARN  nextflow.trace.TimelineObserver - Failed to render execution timeline -- see the log file for details
+nextflow.exception.AbortOperationException: Timeline file already exists: pipeline_timeline.html -- enable the 'timeline.overwrite' option in your config file to overwrite existing files
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:66)
+	at nextflow.trace.TimelineObserver.renderHtml(TimelineObserver.groovy:164)
+	at nextflow.trace.TimelineObserver.onFlowComplete(TimelineObserver.groovy:91)
+	at nextflow.Session$_notifyFlowComplete_lambda38.doCall(Session.groovy:1093)
+	at nextflow.Session.notifyEvent(Session.groovy:1123)
+	at nextflow.Session.notifyFlowComplete(Session.groovy:1093)
+	at nextflow.Session.shutdown0(Session.groovy:775)
+	at nextflow.Session.destroy(Session.groovy:720)
+	at nextflow.script.ScriptRunner.shutdown(ScriptRunner.groovy:244)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:136)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:442)
+	at nextflow.cli.Launcher.run(Launcher.groovy:526)
+	at nextflow.cli.Launcher.main(Launcher.groovy:686)
+Caused by: java.nio.file.FileAlreadyExistsException: pipeline_timeline.html
+	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:94)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+	at java.base/sun.nio.fs.UnixFileSystemProvider.newByteChannel(UnixFileSystemProvider.java:262)
+	at java.base/java.nio.file.spi.FileSystemProvider.newOutputStream(FileSystemProvider.java:482)
+	at java.base/java.nio.file.Files.newOutputStream(Files.java:228)
+	at java.base/java.nio.file.Files.newBufferedWriter(Files.java:3012)
+	at nextflow.trace.TraceHelper.newFileWriter(TraceHelper.groovy:63)
+	... 12 common frames omitted
+Jun-21 18:00:37.759 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+Jun-21 18:00:37.769 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jun-21 18:00:37.790 [main] DEBUG nextflow.util.ThreadPoolManager - Thread pool 'FileTransfer' shutdown completed (hard=false)
+Jun-21 18:00:37.791 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye
