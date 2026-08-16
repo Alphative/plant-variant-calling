@@ -115,7 +115,21 @@ docker tag plant-variant-calling your-dockerhub-username/plant-variant-calling:l
 docker push your-dockerhub-username/plant-variant-calling:latest
 ```
 
-3. Update `nextflow.config` with your Docker Hub username and AWS Batch queue.
+3. Update `nextflow.config` with your Docker Hub username and AWS Batch queue. The `awsbatch` profile looks like this:
+```groovy
+awsbatch {
+    process.executor      = "awsbatch"
+    process.queue         = "arn:aws:batch:us-east-1:ACCOUNT_ID:job-queue/plant-variant-calling-spot-queue"
+    process.container     = "your-dockerhub-username/plant-variant-calling:latest"
+    process.errorStrategy = { task.exitStatus in [137, 140, 143] ? 'retry' : 'finish' }
+    process.maxRetries    = 2
+    process.memory        = { 8.GB * task.attempt }
+    aws.region             = "us-east-1"
+    aws.batch.cliPath      = "/home/miniconda/bin/aws"
+    workDir                = "s3://YOUR-BUCKET-NAME/work/"
+}
+```
+Replace `ACCOUNT_ID` and `YOUR-BUCKET-NAME` with the values from `terraform output` (see step 1 above).
 
 4. Run with AWS Batch profile:
 ```bash
