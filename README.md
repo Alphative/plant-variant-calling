@@ -101,15 +101,23 @@ nextflow run main.nf -profile local -resume
 
 ## Running on AWS
 
-1. Push Docker image to Docker Hub:
+1. Provision infrastructure with Terraform (S3 bucket, IAM roles, Batch compute environment and job queue):
+```bash
+cd terraform
+terraform init
+terraform apply
+cd ..
+```
+
+2. Push Docker image to Docker Hub:
 ```bash
 docker tag plant-variant-calling your-dockerhub-username/plant-variant-calling:latest
 docker push your-dockerhub-username/plant-variant-calling:latest
 ```
 
-2. Update `nextflow.config` with your Docker Hub username and AWS Batch queue.
+3. Update `nextflow.config` with your Docker Hub username and AWS Batch queue.
 
-3. Run with AWS Batch profile:
+4. Run with AWS Batch profile:
 ```bash
 nextflow run main.nf -profile awsbatch
 ```
