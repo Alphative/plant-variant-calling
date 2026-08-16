@@ -186,6 +186,10 @@ plant_variant_calling/
 ├── tests/                   # pytest tests
 │   └── test_post_gwas.py
 ├── docker/                  # Dockerfile
+├── terraform/               # AWS infra as code (S3, IAM, Batch)
+│   ├── main.tf
+│   ├── variables.tf
+│   └── outputs.tf
 ├── data/                    # Input data (not tracked)
 │   ├── samplesheet.csv
 │   ├── phenotypes.txt
