@@ -2,6 +2,19 @@
 
 Automated NGS pipeline for variant calling and GWAS in *Arabidopsis thaliana* — identifying genomic loci associated with drought resistance.
 
+```mermaid
+graph TD
+    A[ENA FASTQs / NCBI Ref] --> B(FastQC & Fastp)
+    B --> C(BWA-MEM Alignment)
+    C --> D(Samtools & MarkDuplicates)
+    D --> E(GATK HaplotypeCaller)
+    E --> F(GenomicsDBImport)
+    F --> G(GenotypeGVCFs)
+    G --> H(VariantFiltration & SnpEff)
+    H --> I(PLINK & GWAS)
+    I --> J[Manhattan & QQ Plots]
+```
+
 ## What This Pipeline Does
 
 1. Downloads raw FASTQ reads from ENA and reference genome from NCBI
